@@ -12,6 +12,7 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("test");
             try
             {
                 //Class to convert user input
