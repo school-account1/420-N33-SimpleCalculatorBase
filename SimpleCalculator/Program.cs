@@ -12,27 +12,46 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test");
-            try
+            int num = 0;
+            int a = 0;
+            do
             {
-                //Class to convert user input
-                InputConverter inputConverter = new InputConverter();
+                try
+                {
+                    if (a == 0)
+                    {
+                        Console.WriteLine("to exit type meme for the operator.");
+                        a++;
+                    }
 
-                //Class to perform actual calculations
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
+                    //Class to convert user input
+                    InputConverter inputConverter = new InputConverter();
 
-                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
+                    //Class to perform actual calculations
+                    CalculatorEngine calculatorEngine = new CalculatorEngine();
 
-                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+                    double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    string operation = Console.ReadLine();
+                    if (operation == "meme")
+                    {
+                        num = num + 5;
+                    }
 
-                Console.WriteLine(result);
+                    double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-            } catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                    Console.WriteLine(result);
+
+
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
             }
+            while (num < 1);
+
+
         }
     }
 }

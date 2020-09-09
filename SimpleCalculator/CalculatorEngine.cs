@@ -27,7 +27,7 @@ namespace SimpleCalculator
                     result = argFirstNumber / argSecondNumber;
                     break;
                 default:
-                    throw new InvalidOperationException("Specified operation is not recognized.");
+                    throw new InvalidOperationException("Specified operation is not recognized. for a addition you need to put add or +. for a subtract put subtract or -. For multiplication put multiply or *. For division put divide or /.");
             }
             return result;
         }
