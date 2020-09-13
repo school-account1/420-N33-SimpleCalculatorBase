@@ -39,6 +39,8 @@ namespace SimpleCalculator
 
                     double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
+                
+                
                 string operationText;
                 operationText = "empty";
                 if (operation == "+")
@@ -57,7 +59,15 @@ namespace SimpleCalculator
                 {
                     operationText = "divides";
                 }
-                    Console.WriteLine("The value" + " " + firstNumber + " " + operationText + " " + secondNumber + " " + "equals" + " " + Math.Round(result, 2));
+
+                    if (result == 420 || result == 69)
+                    {
+                        Console.WriteLine("nice");
+                    }
+                    else
+                    {
+                        Console.WriteLine("The value" + " " + firstNumber + " " + operationText + " " + secondNumber + " " + "equals" + " " + Math.Round(result, 2));
+                    }
             }
             catch (Exception ex)
             {
