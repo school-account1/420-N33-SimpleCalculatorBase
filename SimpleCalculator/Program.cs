@@ -12,7 +12,7 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("test");
+            //Console.WriteLine("TEST");
             try
             {
                 //Class to convert user input
@@ -27,8 +27,25 @@ namespace SimpleCalculator
 
                 double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
 
-                Console.WriteLine(result);
-
+                string operationText;
+                operationText = "empty";
+                if(operation == "+")
+                {
+                    operationText = "plus";
+                }
+                if(operation == "-")
+                {
+                    operationText = "minus";
+                }
+                if(operation == "*")
+                {
+                    operationText = "times";
+                }
+                if (operation == "/")
+                {
+                    operationText = "divides";
+                }
+                Console.WriteLine("The value"+" "+firstNumber+" "+operationText+" "+secondNumber+" "+"equals"+" "+Math.Round(result, 2));
             } catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);

@@ -29,7 +29,7 @@ namespace SimpleCalculator
                 default:
                     throw new InvalidOperationException("Specified operation is not recognized.");
             }
-            return result;
+            return Math.Round(result, 2);
         }
     }
 }
