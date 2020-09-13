@@ -12,44 +12,46 @@ namespace SimpleCalculator
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("TEST");
-            try
+            int num = 0;
+            int a = 0;
+            do
             {
-                //Class to convert user input
-                InputConverter inputConverter = new InputConverter();
-
-                //Class to perform actual calculations
-                CalculatorEngine calculatorEngine = new CalculatorEngine();
-
-                double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
-                string operation = Console.ReadLine();
-
-                double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
-
-                string operationText;
-                operationText = "empty";
-                if(operation == "+")
+                try
                 {
-                    operationText = "plus";
+                    if (a == 0)
+                    {
+                        Console.WriteLine("to exit type meme for the operator.");
+                        a++;
+                    }
+
+                    //Class to convert user input
+                    InputConverter inputConverter = new InputConverter();
+
+                    //Class to perform actual calculations
+                    CalculatorEngine calculatorEngine = new CalculatorEngine();
+
+                    double firstNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    double secondNumber = inputConverter.ConvertInputToNumeric(Console.ReadLine());
+                    string operation = Console.ReadLine();
+                    if (operation == "meme")
+                    {
+                        num = num + 5;
+                    }
+
+                    double result = calculatorEngine.Calculate(operation, firstNumber, secondNumber);
+
+                    Console.WriteLine(result);
+
+
                 }
-                if(operation == "-")
+                catch (Exception ex)
                 {
-                    operationText = "minus";
+                    Console.WriteLine(ex.Message);
                 }
-                if(operation == "*")
-                {
-                    operationText = "times";
-                }
-                if (operation == "/")
-                {
-                    operationText = "divides";
-                }
-                Console.WriteLine("The value"+" "+firstNumber+" "+operationText+" "+secondNumber+" "+"equals"+" "+Math.Round(result, 2));
-            } catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
+            while (num < 1);
+
+
         }
     }
 }
