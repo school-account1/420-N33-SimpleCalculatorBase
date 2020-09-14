@@ -55,7 +55,11 @@ namespace SimpleCalculator
                 {
                     operationText = "times";
                 }
-                if (operation == "/")
+                if (operation == "^")
+                {
+                    operationText = "exponent";
+                }
+                    if (operation == "/")
                 {
                     operationText = "divides";
                 }
